@@ -1,0 +1,64 @@
+# -------------------
+# 通用忽略
+# -------------------
+# 操作系统生成的文件
+.DS_Store
+Thumbs.db
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Desktop.ini
+
+# 日志文件
+*.log
+logs/
+
+# 临时文件
+tmp/
+temp/
+*.tmp
+*.temp
+
+# -------------------
+# Java 
+# -------------------
+# 编译输出目录
+/target/
+/out/
+
+# 字节码文件
+*.class
+
+# Maven 配置
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+
+# -------------------
+# Node.js 项目示例
+# -------------------
+# 依赖包目录
+node_modules/
+
+# npm 日志
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 环境变量文件
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# -------------------
+# 专属规则
+# -------------------
+.claude/
+.vscode/
