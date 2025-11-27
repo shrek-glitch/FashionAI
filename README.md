@@ -251,9 +251,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-- **Project Maintainer**: [Your Name](mailto:your.email@example.com)
-- **Twitter**: [@yourusername](https://twitter.com/yourusername)
-- **Website**: [yourwebsite.com](https://yourwebsite.com)
+- **Project Maintainer**: [Your Name](1345227885@qq.com)
+- **School Email**: [@CHEN Yiming](yiming0011.chen@connect.polyu.hk)
 
 ---
 
