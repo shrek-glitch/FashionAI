@@ -232,12 +232,6 @@ pip install --upgrade transformers
 # Check torch.cuda.is_available() in Python
 ```
 
-### Getting Help
-
-- [GitHub Issues](https://github.com/yourusername/FashionAI/issues)
-- [Discord Community](https://discord.gg/fashionai)
-- [Documentation Wiki](https://github.com/yourusername/FashionAI/wiki)
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -251,7 +245,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-- **Project Maintainer**: [Your Name](1345227885@qq.com)
+- **Project Maintainer**: [Chen Yiming](1345227885@qq.com)
 - **School Email**: [@CHEN Yiming](yiming0011.chen@connect.polyu.hk)
 
 ---
