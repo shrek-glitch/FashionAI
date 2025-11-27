@@ -44,10 +44,10 @@ except KeyError:
 
 # --- Core Logic ---
 
-# 1. Load Model (Cached)
+# Load the language model and tokenizer with caching for performance
 @st.cache_resource
 def load_model():
-    model_name = "Qwen/Qwen3-1.7B"
+    model_name = "Qwen/Qwen2.5-1.7B"
     try:
         tokenizer = AutoTokenizer.from_pretrained(model_name)
         model = AutoModelForCausalLM.from_pretrained(
@@ -62,7 +62,7 @@ def load_model():
 
 tokenizer, model = load_model()
 
-# 2. Image Generation Configuration
+# Configure image generation API settings and headers
 BASE_URL = 'https://api-inference.modelscope.cn/'
 COMMON_HEADERS = {
     "Authorization": f"Bearer {API_KEY}",
@@ -70,6 +70,13 @@ COMMON_HEADERS = {
 }
 
 def generate_fashion_image(prompt):
+    """
+    Generate fashion outfit image using Flux API
+    Args:
+        prompt (str): User's fashion request
+    Returns:
+        tuple: (PIL Image or None, status message)
+    """
     full_prompt = (
         f"Fashion outfit: {prompt}. High resolution, realistic fabric texture, "
         "professional lighting, fashion magazine style, full-body front view, "
@@ -114,6 +121,13 @@ def generate_fashion_image(prompt):
         return None, str(e)
 
 def get_text_advice(user_input):
+    """
+    Generate fashion advice text using the language model
+    Args:
+        user_input (str): User's fashion query
+    Returns:
+        str: Generated fashion advice
+    """
     prompt = f"Provide detailed fashion advice for {user_input}, including clothing styles, color matching, accessories, and suitable occasions"
     messages = [{"role": "user", "content": prompt}]
     
@@ -132,14 +146,14 @@ def get_text_advice(user_input):
         )
     output_ids = generated_ids[0][len(model_inputs.input_ids[0]):].tolist()
     
-    # Logic to strip thinking process
+    # Strip Qwen's thinking process tokens to get final answer
     try:
         # 151668 is the Qwen thought process separator token
         index = len(output_ids) - output_ids[::-1].index(151668)
     except ValueError:
         index = 0
-    
-    # We only decode the final answer, ignoring the thinking part
+
+    # Decode only the final answer, ignoring the thinking part
     content = tokenizer.decode(output_ids[index:], skip_special_tokens=True).strip("\n")
     
     return content
@@ -168,7 +182,7 @@ if user_input := st.chat_input("Ask for fashion advice (e.g., Summer outfit for 
     # 2. Generate Response
     with st.chat_message("assistant"):
         if not model or not tokenizer:
-            st.error("Model not loaded. Please checks logs.")
+            st.error("Model not loaded. Please check logs.")
         else:
             # Step A: Text Advice
             status_placeholder = st.empty()
