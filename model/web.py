@@ -47,7 +47,7 @@ except KeyError:
 # Load the language model and tokenizer with caching for performance
 @st.cache_resource
 def load_model():
-    model_name = "Qwen/Qwen2.5-1.7B"
+    model_name = "Qwen/Qwen3-1.7B"
     try:
         tokenizer = AutoTokenizer.from_pretrained(model_name)
         model = AutoModelForCausalLM.from_pretrained(

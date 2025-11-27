@@ -4,7 +4,7 @@
 
 ![FashionAI Logo](https://img.shields.io/badge/FashionAI-Style%20Advisor-blue?style=for-the-badge&logo=python)
 
-An intelligent fashion advice system that combines **Qwen2.5-1.7B** for text generation and **Flux** for realistic fashion image generation.
+An intelligent fashion advice system that combines **Qwen3-1.7B** for text generation and **Flux** for realistic fashion image generation.
 
 [![Python](https://img.shields.io/badge/Python-3.8+-green?style=flat-square&logo=python)](https://python.org)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-red?style=flat-square&logo=streamlit)](https://streamlit.io)
@@ -139,7 +139,7 @@ FashionAI Stack:
 
 ### Model Information
 
-- **Qwen2.5-1.7B**: Lightweight language model optimized for conversational AI
+- **Qwen3-1.7B**: Lightweight language model optimized for conversational AI
 - **Flux**: Advanced text-to-image generation model for fashion visualization
 - **Local Processing**: All text generation happens locally on your machine
 - **API Integration**: Only image generation requires external API calls
@@ -238,7 +238,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- **Qwen Team**: For the excellent Qwen2.5 language model
+- **Qwen Team**: For the excellent Qwen3 language model
 - **ModelScope**: For providing the Flux image generation API
 - **Streamlit**: For the amazing web framework
 - **OpenAI**: For inspiration in conversational AI interfaces
